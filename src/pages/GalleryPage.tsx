@@ -1,13 +1,13 @@
-import g1 from "@/assets/gallery-1.jpg";
-import g2 from "@/assets/gallery-2.jpg";
-import g3 from "@/assets/gallery-3.jpg";
-import g4 from "@/assets/gallery-4.jpg";
-import heroImg from "@/assets/hero-saree.jpg";
-import lehengaImg from "@/assets/lehenga.jpg";
-import anarkaliImg from "@/assets/anarkali.jpg";
-import festivalImg from "@/assets/festival.jpg";
-import bridalImg from "@/assets/bridal-party.jpg";
-import detailImg from "@/assets/saree-detail.jpg";
+import g1 from "@/assets/gallery-1.webp";
+import g2 from "@/assets/gallery-2.webp";
+import g3 from "@/assets/gallery-3.webp";
+import g4 from "@/assets/gallery-4.webp";
+import heroImg from "@/assets/hero-saree.webp";
+import lehengaImg from "@/assets/lehenga.webp";
+import anarkaliImg from "@/assets/anarkali.webp";
+import festivalImg from "@/assets/festival.webp";
+import bridalImg from "@/assets/bridal-party.webp";
+import detailImg from "@/assets/saree-detail.webp";
 
 const photos = [
   { src: heroImg, alt: "Magenta silk saree drape", span: "md:col-span-2 md:row-span-2" },

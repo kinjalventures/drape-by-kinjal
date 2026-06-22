@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import kinjalImg from "@/assets/kinjal.jpg";
+import kinjalImg from "@/assets/kinjal.webp";
 
 export default function AboutPage() {
   return (

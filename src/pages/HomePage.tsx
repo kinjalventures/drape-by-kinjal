@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import heroImg from "@/assets/hero-saree.jpg";
-import lehengaImg from "@/assets/lehenga.jpg";
-import anarkaliImg from "@/assets/anarkali.jpg";
-import festivalImg from "@/assets/festival.jpg";
-import bridalImg from "@/assets/bridal-party.jpg";
+import heroImg from "@/assets/hero-saree.webp";
+import lehengaImg from "@/assets/lehenga.webp";
+import anarkaliImg from "@/assets/anarkali.webp";
+import festivalImg from "@/assets/festival.webp";
+import bridalImg from "@/assets/bridal-party.webp";
 
 export default function HomePage() {
   return (
