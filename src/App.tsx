@@ -21,9 +21,9 @@ function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
         <Link to="/" className="group flex flex-col leading-none">
-          <span className="font-serif text-2xl font-semibold text-primary">Draped by Kinjal</span>
+          <span className="font-serif text-2xl font-semibold text-primary">Indian Glam</span>
           <span className="mt-0.5 text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-            Wesley Chapel · Tampa Bay
+            by Kinjal · Wesley Chapel · Tampa Bay
           </span>
         </Link>
 
@@ -33,7 +33,7 @@ function SiteHeader() {
             <NavLink
               key={l.to}
               to={l.to}
-              end={l.exact}
+              end={'exact' in l ? l.exact : false}
               className={({ isActive }) =>
                 `text-sm tracking-wide transition-colors ${isActive ? "text-primary" : "text-foreground/70 hover:text-primary"}`
               }
@@ -64,7 +64,7 @@ function SiteHeader() {
           <NavLink
             key={l.to}
             to={l.to}
-            end={l.exact}
+            end={'exact' in l ? l.exact : false}
             className={({ isActive }) =>
               `text-xs tracking-wide ${isActive ? "text-primary" : "text-foreground/70"}`
             }
@@ -83,9 +83,9 @@ function SiteFooter() {
     <footer className="mt-16 border-t border-border/60 bg-[color:var(--magenta-deep)] text-ivory">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-3">
         <div>
-          <h3 className="font-serif text-2xl">Draped by Kinjal</h3>
+          <h3 className="font-serif text-2xl">Indian Glam</h3>
           <p className="mt-3 text-sm text-ivory/75">
-            Traditional Indian outfit draping, styled with love in Wesley Chapel, Florida.
+            Traditional Indian outfit draping by Kinjal, styled with love in Wesley Chapel, Florida.
           </p>
         </div>
         <div>
@@ -116,7 +116,7 @@ function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-ivory/10 py-5 text-center text-xs text-ivory/60">
-        © {new Date().getFullYear()} Draped by Kinjal. All rights reserved.
+        © {new Date().getFullYear()} Indian Glam by Kinjal. All rights reserved.
       </div>
     </footer>
   );
