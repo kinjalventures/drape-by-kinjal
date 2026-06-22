@@ -1,11 +1,12 @@
-import { type ReactNode } from "react";
+import { lazy, Suspense, type ReactNode } from "react";
 import { Routes, Route, Link, NavLink } from "react-router-dom";
 
-import HomePage from "./pages/HomePage";
-import AboutPage from "./pages/AboutPage";
-import ServicesPage from "./pages/ServicesPage";
-import GalleryPage from "./pages/GalleryPage";
-import ContactPage from "./pages/ContactPage";
+// ─── Lazy page imports (code-split per route) ────────────────────────────────
+const HomePage    = lazy(() => import("./pages/HomePage"));
+const AboutPage   = lazy(() => import("./pages/AboutPage"));
+const ServicesPage = lazy(() => import("./pages/ServicesPage"));
+const GalleryPage = lazy(() => import("./pages/GalleryPage"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
 
 // ─── Nav links ────────────────────────────────────────────────────────────────
 const navLinks = [
@@ -160,14 +161,22 @@ function SiteLayout({ children }: { children: ReactNode }) {
 export default function App() {
   return (
     <SiteLayout>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/gallery" element={<GalleryPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      <Suspense
+        fallback={
+          <div className="flex min-h-[60vh] items-center justify-center">
+            <span className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
+          </div>
+        }
+      >
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
     </SiteLayout>
   );
 }

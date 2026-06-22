@@ -45,6 +45,7 @@ export default function HomePage() {
                 alt="Woman in magenta and gold silk saree, beautifully draped"
                 width={1600}
                 height={1100}
+                fetchPriority="high"
                 className="h-[520px] w-full object-cover md:h-[640px]"
               />
             </div>
